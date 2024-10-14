@@ -4,23 +4,13 @@ TGDataset is a collection of Telegram channels that takes a snapshot of the actu
 
 The dataset size is approximately 460 GB and is available for download in its zipped version (roughly 71 GB) through the Zenodo service [here](https://zenodo.org/record/7640712#.Y-9PjNLMKXI).
 
-If you use this dataset please cite:
-```
-@article{la2023tgdataset,
-  title={TGDataset: a Collection of Over One Hundred Thousand Telegram Channels},
-  author={La Morgia, Massimo and Mei, Alessandro and Mongardini, Alberto Maria},
-  journal={arXiv preprint arXiv:2303.05345},
-  year={2023}
-}
-```
-
 
 ## Structure
 
-The dataset contains 120,979 Telegram channels stored in (alphabetically sorted) 121 JSON files divided in 4 folders:
+The dataset contains 120,979 Telegram channels stored in (alphabetically sorted) 121 JSON files divided into 4 folders:
 - TGDataset_1 -> channels with username starting with A to freeJul
 - TGDataset_2 -> channels with username starting with freejur to NaturKind
-- TGDataset_3 -> channels with username starting with Naturmedi to theslog
+- TGDataset_3 -> channels with a username starting with Naturmedi to theslog
 - TGDataset_4 -> the remaining channels
 
 For each channel, we store the following information:
@@ -35,7 +25,7 @@ For each channel, we store the following information:
 - **text_messages**: the text messages posted in the channel,
 - **generic_media**: the media content posted in the channel.
  
-Each text message has: 
+Each text message has the following: 
 - **message**: the text of the message (*string*),
 - **date**: the timestamp related to the date of the message (*int*),
 - **author**: the ID of who posted the message (*int*),
@@ -89,10 +79,10 @@ The JSON files are in the following structure:
 
 ## Importing data into MongoDB
 
-- Install MongoDB following the instruction reported on the [official website](https://www.mongodb.com/docs/manual/administration/install-community/)
+- Install MongoDB following the instructions reported on the [official website](https://www.mongodb.com/docs/manual/administration/install-community/)
 - Download a portion or the whole dataset from [Zenodo](https://zenodo.org/record/7640712#.Y-9PjNLMKXI).
-- Unpack the dataset and move the Json files into the folder `public_db`
-- Install all the necessary python packages running the following command:
+- Unpack the dataset and move the JSON files into the folder `public_db`
+- Install all the necessary Python packages running the following command:
 ```bash
 pip install -r requirements.txt
 ```
@@ -117,7 +107,7 @@ docker-compose run python_app
 ```
 
 ## Other data
-The `labeled_data` folder contains three csv files:
+The `labeled_data` folder contains three CSV files:
 
 - **ch_to_topic_mapping.csv**: indicates the topic addressed by each channel (identified by its ID).
 - **channel_to_language_mapping.csv**: indicates the language used by each channel (identified by its ID).
@@ -132,7 +122,7 @@ This repository contains the following scripts.
 
 **db_utilities.py**: defines utility functions to interact with MongoDB.
 
-- *import_channels_to_mongoDB(db_name)*: imports the channels from json format files to MongoDB creating a new db called db_name.
+- *import_channels_to_mongoDB(db_name)*: imports the channels from JSON format files to MongoDB, creating a new db called db_name.
 - *get_channel_ids()*: returns all the ID of the channels within the MongoDB database.
 - *get_channels_by_ids(ids_channels)*: return the channels with ID belonging to the given list of IDs.
 - *get_channels_by_id(id_channel)*: return the channel with ID id_channel.
