@@ -112,8 +112,7 @@ The `labeled_data` folder contains three CSV files:
 - **ch_to_topic_mapping.csv**: indicates the topic addressed by each channel (identified by its ID).
 - **channel_to_language_mapping.csv**: indicates the language used by each channel (identified by its ID).
 - **sabmyk_network.csv**: the list of channels belonging to the Sabmyk network (identified by its ID).
-- **conspiracy_channels.csv**: the list of conspiracy channels posting URLs contained in the Conspiracy Resources Dataset presented in the paper: [The Conspiracy Money Machine: Uncovering
- Telegram’s Conspiracy Channels and their Profit Model](https://arxiv.org/pdf/2310.15977.pdf).
+- **conspiracy_channels.csv**: the list of conspiracy channels posting URLs contained in the Conspiracy Resources Dataset presented in the paper.
 
 
 ## Additional files
